@@ -9,8 +9,9 @@ const Navbar = () => {
           Ian Hoang
         </Link>
         <div className="flex space-x-8">
-          {["Projects", "Contact", "Experience"].map((item, index) => (
+          {["Projects", "Experience", "Contact"].map((item, index) => (
               <Link
+                key = {index}
                 href={item === "About" ? "/" : `/${item.toLowerCase()}`}
                 className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
               >
