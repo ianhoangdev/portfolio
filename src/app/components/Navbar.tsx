@@ -1,20 +1,26 @@
-import Link from "next/link";
+"use client"
+
+import Link from "next/link"
 
 const Navbar = () => {
   return (
-    <nav className="bg-transparent max-w-2xl mx-auto mt-10">
-      <div className="flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
+      <div className="flex justify-between items-center pt-8">
+        <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">
           Ian Hoang
         </Link>
-        <div className="flex space-x-6">
-          <Link href="/projects" className="hover:text-gray-500">Projects</Link>
-          <Link href="/" className="hover:text-blue-500">About</Link>
-          <Link href="/experience" className="hover:text-gray-500">Experience</Link>
+        <div className="flex space-x-8">
+          {["Projects", "Contact", "Experience"].map((item, index) => (
+              <Link
+                href={item === "About" ? "/" : `/${item.toLowerCase()}`}
+                className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+              >
+                {item}
+              </Link>
+          ))}
         </div>
       </div>
-    </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
+

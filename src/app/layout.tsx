@@ -1,7 +1,6 @@
+// Remove the "use client" directive from this file
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,24 +23,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname(); // Get current pathname
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <motion.div
-          key={pathname}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {children}
-        </motion.div>
+        {children}
       </body>
     </html>
   );
 }
-
