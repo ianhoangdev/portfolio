@@ -50,14 +50,14 @@ export default function Contact() {
               </p>
               <div className="space-y-4">
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:ianhoang.dev@gmail.com"
                   className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   <FiMail className="mr-3" size={24} />
-                  your.email@example.com
+                  ianhoang.dev@gmail.com
                 </a>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/ianhoangdev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300"
@@ -66,7 +66,7 @@ export default function Contact() {
                   GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/ianhoang.dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300"

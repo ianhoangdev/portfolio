@@ -6,46 +6,58 @@ import Image from "next/image"
 
 const projects = [
   {
-    name: "deguzman.cloud",
-    tags: ["Go", "Kubernetes", "Docker", "Svelte", "Raspberry Pi 5"],
+    name: "resumebuild.io",
+    tags: ["Next.js", "TailwindCSS", "TypeScript", "PostgreSQL", "OpenAI API", "GraphQL", "Firebase", "WebSockets"],
     description:
-      "Developed a self-hosted cloud platform using Raspberry Pi 5s and Kubernetes, providing a cost-effective, bare-metal alternative to traditional cloud providers. Implemented several services, including cloud hosting, a personal blog, file sharing, and a QR code generator, with plans to expand functionality further.",
-    github: "#",
-    website: "#",
+      "Developed an AI-powered resume builder using Next.js and TailwindCSS, leveraging OpenAI API for intelligent feedback and ATS optimization. The tool streamlines the resume creation process, providing users with personalized suggestions and templates.",
+    github: "",
+    website: "",
     date: "Present",
   },
   {
-    name: "Computing Student Union",
-    tags: ["Svelte", "Tailwind", "Prisma", "PostgreSQL"],
+    name: "Portfolio Website",
+    tags: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion"],
     description:
-      "Developed the website for the Computing Student Union at the University of Florida. I created the data models, back-end, contributed to the design, and implemented the front-end for the teams, club, and home page.",
-    website: "#",
-    date: "Present",
+      "Designed and developed a personal portfolio website using Next.js and TailwindCSS, showcasing my projects and skills. Implemented Framer Motion for smooth animations, enhancing user experience and engagement.",
+    github: "https://github.com/ianhoangdev/portfolio.git",
+    website: "https://ianhoang.netlify.app/",
+    date: "Feb 2025",
   },
   {
-    name: "HaXr",
-    tags: ["NextJS", "Tailwind", "Prisma", "PostgreSQL"],
+    name: "Wordhunt Solver",
+    tags: ["C++", "WebAssembly", "Next.js", "TypeScript", "TailwindCSS", "Redux", "TensorFlow"],
     description:
-      "Working with a team of 3 to develop HaXr, the system that powers University of Florida's flagship hackathon, SwampHacks. I am working on the form creation, submission, and review process.",
-    github: "#",
-    website: "#",
-    date: "Present",
+      "Engineered a high-performance C++ wordhunt solver with a trie-based algorithm and WebAssembly, improving search speed by 50%. Integrated Redux for memory optimization and currently building a TensorFlow-based ML model for advanced pattern recognition.",
+    github: "https://github.com/ianhoangdev/wordhuntsolver",
+    website: "https://youtu.be/J2-TIB7u0yI?si=lbcbjJp1nUmkp3Jb",
+    date: "Jan 2025",
   },
   {
-    name: "ColorStack UF Website",
-    tags: ["SvelteKit", "Tailwind"],
+    name: "BlockRaise",
+    tags: ["Next.js", "TailwindCSS", "TypeScript", "Node.js", "Solidity", "Docker", "AWS", "Netlify"],
     description:
-      "Led a team of 3 other developers and worked with Gator User Design to create a website for the ColorStack UF chapter.",
-    github: "#",
-    website: "#",
-    date: "July 2024",
+      "Built a Web3 crowdfunding platform with Solidity smart contracts on Ethereum for secure, decentralized transactions. Developed a responsive Next.js UI with TailwindCSS and optimized deployment using Docker on EC2 and S3 storage, cutting hosting costs by 20%.",
+    github: "https://github.com/ianhoangdev/BlockRaise",
+    website: "https://blockraise.netlify.app/",
+    date: "Dec 2024",
   },
   {
-    name: "Registr",
-    tags: ["Svelte", "Python", "FastAPI"],
-    description: "A project utilizing Svelte and FastAPI for streamlined registration management.",
-    date: "January 2024",
+    name: "Bubli",
+    tags: ["JavaScript", "React", "Three.js", "FastAPI", "MongoDB", "Firebase", "Vercel"],
+    description:
+      "Worked with a team of 3 to develop an AI-powered emotional support platform using React and Three.js for a 3D interactive experience. Integrated FastAPI and MongoDB for backend services, Firebase for user authentication, and deployed on Vercel.",
+    github: "https://github.com/hwii-florescent/bubli",
+    website: "https://enchanting-lebkuchen-026bd8.netlify.app/?fbclid=IwY2xjawIb8J1leHRuA2FlbQIxMAABHa54RThXW6i-HJCDXloPoE5a3RKbGmrLfv34TazeTvLbHRYU6BIMmjz4vw_aem_O-PzYaKrChYNb7kRwpI8uQ",
+    date: "Aug 2024",
   },
+  {
+    name: "Stroke Rehabilitation Game",
+    tags: ["C#", "Unity", "Oculus SDK"],
+    description:
+      "Created a VR rehabilitation game for stroke patients using Unity and C#, incorporating Oculus SDK and Unity XR Interaction Toolkit to create interactive exercises. The game features customizable scenarios to enhance motor skills and cognitive function.",
+    github: "https://github.com/DanielJZambrano/StrokeGame.git",
+    date: "Aug 2023",
+  }
 ]
 
 export default function Projects() {
@@ -79,7 +91,7 @@ export default function Projects() {
                 <div className="p-6">
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-2 sm:mb-0">{project.name}</h2>
-                    <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-black px-2.5 py-0.5 rounded-full border border-black shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                       {project.date}
                     </span>
                   </div>
@@ -87,7 +99,7 @@ export default function Projects() {
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-xs font-medium text-gray-600 bg-gray-100 px-2.5 py-0.5 rounded-full"
+                        className="text-xs font-medium text-black border border-black px-2.5 py-0.5 rounded-full shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 hover:bg-gray-100"
                       >
                         {tag}
                       </span>
