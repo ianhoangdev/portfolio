@@ -31,7 +31,7 @@ const techStacks = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-xl mx-auto px-4">
         <Navbar />
         <motion.main
           initial={{ opacity: 0, y: 20 }}
@@ -109,85 +109,3 @@ export default function Home() {
     </div>
   )
 }
-
-// "use client"
-
-// import { motion } from "framer-motion"
-// import Image from "next/image"
-// import Link from "next/link"
-// import Navbar from "./components/Navbar"
-
-// export default function Home() {
-//   return (
-//     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-//       <div className="max-w-4xl mx-auto px-4">
-//         <Navbar />
-//         <motion.main
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.5 }}
-//           className="pt-16 pb-20"
-//         >
-//           <div className="flex flex-col items-center mb-12">
-//             <motion.h1
-//               initial={{ opacity: 0, y: -20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: 0.2 }}
-//               className="text-4xl font-bold text-gray-800 mb-4 text-center"
-//             >
-//               Hello, I'm Ian Hoang
-//             </motion.h1>
-//             <motion.p
-//               initial={{ opacity: 0 }}
-//               animate={{ opacity: 1 }}
-//               transition={{ duration: 0.5, delay: 0.4 }}
-//               className="text-xl text-gray-600 mb-8 max-w-2xl"
-//             >
-//               I am a sophomore student at the University of Florida currently studying Computer Science and Mathematics. I have experience in building full-stack web applications and mobile applications.
-//             </motion.p>
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: 0.6 }}
-//               className="mb-8"
-//             >
-//             </motion.div>
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: 0.8 }}
-//             >
-//               <Link
-//                 href="/projects"
-//                 className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 text-lg"
-//               >
-//                 View My Projects
-//               </Link>
-//             </motion.div>
-//           </div>
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.5, delay: 1 }}
-//           >
-//             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Tech Stack</h2>
-//             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-//               {techStacks.map((tech, index) => (
-//                 <motion.div
-//                   key={tech.name}
-//                   initial={{ opacity: 0, y: 20 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   transition={{ duration: 0.3, delay: 1 + index * 0.05 }}
-//                   className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
-//                 >
-//                   <tech.icon className="text-2xl mb-2 text-gray-700" />
-//                   <span className="text-xs text-gray-600 text-center">{tech.name}</span>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </motion.section>
-//         </motion.main>
-//       </div>
-//     </div>
-//   )
-// }

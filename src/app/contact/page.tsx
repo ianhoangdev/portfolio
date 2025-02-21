@@ -34,7 +34,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-xl mx-auto px-4">
         <Navbar />
         <main className="py-12">
           <div className="flex flex-col md:flex-row gap-12">
