@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ian Hoang's Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features a clean design, dark mode support, and smooth animations.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Modern Tech Stack**
+  - Next.js 14 with App Router
+  - TypeScript for type safety
+  - Tailwind CSS for styling
+  - Framer Motion for animations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Design**
+  - Responsive layout for all devices
+  - Dark/Light mode support
+  - Handwriting-style fonts (Caveat, Permanent Marker)
+  - Smooth page transitions and animations
+  - Gradient text and backgrounds
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Pages**
+  - Home: Introduction and skills overview
+  - Projects: Showcase of development work with filtering
+  - Experience: Professional experience timeline
+  - Contact: Contact information and social links
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Technologies
 
-## Learn More
+- **Frontend**
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+  - Framer Motion
+  - React Icons
 
-To learn more about Next.js, take a look at the following resources:
+- **Styling**
+  - Custom gradients
+  - Responsive design
+  - Dark mode support
+  - Custom animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏃‍♂️ Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ianhoangdev/portfolio.git
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
+   ```bash
+   cd portfolio
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🎨 Customization
+
+- **Colors**: Edit the gradient colors in the Tailwind config
+- **Content**: Update the content in the respective page components
+- **Styling**: Modify the Tailwind classes to match your preferences
+- **Images**: Replace the profile image and project screenshots
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive and optimized for:
+- Desktop
+- Tablet
+- Mobile devices
+
+## 🌙 Dark Mode
+
+The website supports both light and dark modes with:
+- Automatic system preference detection
+- Manual toggle option
+- Smooth transitions between modes
+
+## 🔗 Links
+
+- [Live Demo](https://ianhoang.dev)
+- [GitHub Repository](https://github.com/ianhoangdev/portfolio)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+Ian Hoang
+- GitHub: [@ianhoangdev](https://github.com/ianhoangdev)
+- LinkedIn: [ianhoangdev](https://linkedin.com/in/ianhoangdev)
+- Email: ianhoangdev@gmail.com
