@@ -2,127 +2,127 @@
 
 import { motion } from "framer-motion"
 import Navbar from "../components/Navbar"
+import { FiBriefcase, FiCalendar, FiMapPin } from "react-icons/fi"
+import PageArrow from "../components/PageArrow"
 
 const experiences = [
   {
-    role: "Software Engineering Intern",
-    tags: ["SwiftUI", "PostgreSQL", "Firebase", "AWS S3"],
-    company: "OneClick",
+    title: "Software Engineer Intern",
+    company: "OneClick (Startup)",
     location: "Remote",
-    description:
-      "Developed an iOS fitness tracking app using SwiftUI. Optimized PostgreSQL queries for improved database performance and integrated Firebase for real-time data synchronization. Utilized AWS S3 for efficient media storage and retrieval.",
-    date: "Present",
+    period: "May 2025 - Aug 2025",
+    description: [
+      "Engineer a high-performance React Native fitness application, achieving a 40% reduction in mobile screen load times through strategic implementation of lazy loading and offline caching with AsyncStorage",
+      "Integrate Apple HealthKit and Spoonacular API to aggregate and normalize user health/nutrition data in PostgreSQL with time-series indexing for 80% faster analytic queries"
+    ]
   },
   {
-    role: "Software Engineering Intern",
-    tags: ["Python", "R", "HTML/CSS", "JavaScript", "Bootstrap", "WebSockets"],
-    company: "UF Ecosystem Services AI Lab",
+    title: "Software Engineer Intern",
+    company: "Ecosystem Services AI Lab",
     location: "Gainesville, FL",
-    description:
-      "Developed Python & R scripts for automated GIS data processing. Enhanced AI model training by creating high-quality annotations using QGIS and ArcGIS Pro. Maintained the lab’s website using HTML, CSS, JavaScript, and Bootstrap.",
-    date: "Present",
+    period: "Jan 2025 - Apr 2025",
+    description: [
+      "Conducted geo-spatial analysis by scraping 1,000+ Google reviews of urban green spaces using Python and BeautifulSoup, providing data for environmental research",
+      "Annotated 200+ Street View images to train a greenery detection ML model, achieving 95% classification accuracy",
+      "Redesigned lab's website with HTML/CSS/JS and Bootstrap, reducing load time by 30% and improving mobile UX"
+    ]
   },
+  {
+    title: "Software Engineer Intern",
+    company: "UF CSSALT",
+    location: "Gainesville, FL",
+    period: "Jan 2025 - May 2025",
+    description: [
+      "Built real-time defibrillator simulation software in Unity using C#, enhancing training accuracy for hospitals",
+      "Optimized application performance by 30% through advanced physics calculations and state machine architecture",
+      "Implemented robust CI/CD pipelines utilizing GitHub Actions, reducing deployment time by 40% and enabling test-driven development with automated unit tests"
+    ]
+  }
 ]
 
-// Motion variants for staggered animations
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: { 
-    opacity: 1, 
-    transition: { staggerChildren: 0.2 } 
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3 } }
-}
-
-export default function Experiences() {
+export default function Experience() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-xl mx-auto px-4">
-        <Navbar />
-        <main className="py-12">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <Navbar />
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold text-gray-800 mb-8 text-center"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-6xl font-permanent-marker bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 leading-[1.2]"
           >
-            My Experiences
+            Experience
           </motion.h1>
-
-          <motion.div 
-            variants={containerVariants} 
-            initial="hidden" 
-            animate="show" 
-            className="space-y-8"
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-2xl font-caveat text-gray-700 dark:text-gray-200 mb-8"
           >
-            {experiences.map((experience, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="p-6">
-                  {/* Role and Date */}
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-                    <h2 className="text-xl font-semibold text-gray-800">{experience.role}</h2>
-                    <span className="text-sm font-medium text-black px-2.5 py-0.5 rounded-full border border-black shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                      {experience.date}
-                    </span>
+            My professional journey so far
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="space-y-8"
+        >
+          {experiences.map((experience, index) => (
+            <motion.div
+              key={`${experience.company}-${experience.period}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                    {experience.title}
+                  </h3>
+                  <p className="text-xl text-gray-700 dark:text-gray-300">
+                    {experience.company}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
+                  <div className="flex items-center text-gray-600 dark:text-gray-400">
+                    <FiCalendar className="w-5 h-5 mr-2" />
+                    <span className="font-caveat text-lg">{experience.period}</span>
                   </div>
-
-                  {/* Company UI */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="mr-4 text-md font-bold text-black">{experience.company}</span>
-                    <div className="flex items-center text-black text-sm font-medium px-3 py-1 rounded-full">
-                      <svg 
-                        className="w-4 h-4 mr-2" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24" 
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-label="Company location icon"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth="2" 
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        ></path>
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth="2" 
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        ></path>
-                      </svg>
-                      {experience.location}
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 mb-4">{experience.description}</p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {experience.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="text-xs font-medium text-black border border-black px-2.5 py-0.5 rounded-full shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 hover:bg-gray-100"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex items-center text-gray-600 dark:text-gray-400">
+                    <FiMapPin className="w-5 h-5 mr-2" />
+                    <span className="font-caveat text-lg">{experience.location}</span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </main>
-      </div>
+              </div>
+              <ul className="space-y-3">
+                {experience.description.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.6 + index * 0.1 + i * 0.1 }}
+                    className="flex items-start text-gray-600 dark:text-gray-300"
+                  >
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                    <span className="text-lg">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </motion.div>
+      </main>
+      <PageArrow nextPage="/contact" label="Get in Touch" />
     </div>
   )
 }

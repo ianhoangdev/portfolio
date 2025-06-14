@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Permanent_Marker } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const caveat = Caveat({
   subsets: ["latin"],
+  variable: "--font-caveat",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const permanentMarker = Permanent_Marker({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-permanent-marker",
 });
 
 export const metadata: Metadata = {
   title: "Ian Hoang",
-  description: "Website of Ian Hoang",
+  description: "Full-stack developer and Computer Science student at UF",
   icons: {
     icon: "/favicon.ico",
   },
@@ -26,11 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${caveat.variable} ${permanentMarker.variable} antialiased min-h-screen`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

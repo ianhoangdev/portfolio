@@ -4,108 +4,178 @@ import { motion } from "framer-motion"
 import Navbar from "./components/Navbar"
 import Link from "next/link"
 import Image from "next/image"
-import { FaJs, FaReact, FaAngular, FaNodeJs, FaAws, FaDocker, FaGitAlt } from "react-icons/fa"
-import { SiTypescript, SiSwift, SiPython, SiCplusplus, SiSolidity, SiSharp, SiR, SiFlask, SiNextdotjs, SiExpress, SiTensorflow, SiBootstrap, SiMongodb, SiPostgresql, SiGooglecloud, SiFirebase, SiHeroku } from "react-icons/si"
+import { FiGithub, FiLinkedin, FiMail, FiCode, FiServer, FiCpu } from "react-icons/fi"
+import PageArrow from "./components/PageArrow"
 
-const techStacks = [
-  { name: "JavaScript", icon: FaJs },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "Swift", icon: SiSwift },
-  { name: "Python", icon: SiPython },
-  { name: "C/C++", icon: SiCplusplus },
-  { name: "Solidity", icon: SiSolidity },
-  { name: "C#", icon: SiSharp },
-  { name: "React", icon: FaReact },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "Express.js", icon: SiExpress },
-  { name: "Node.js", icon: FaNodeJs },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "PostgreSQL", icon: SiPostgresql },
-  { name: "AWS", icon: FaAws },
-  { name: "Google Cloud", icon: SiGooglecloud },
-  { name: "Docker", icon: FaDocker },
-  { name: "Firebase", icon: SiFirebase },
-  { name: "Heroku", icon: SiHeroku },
+const skills = [
+  {
+    icon: <FiCode className="w-8 h-8" />,
+    title: "Full Stack",
+    description: "Building modern web applications with React, Next.js, and Node.js"
+  },
+  {
+    icon: <FiServer className="w-8 h-8" />,
+    title: "Backend",
+    description: "Developing robust APIs and services with Go, Python, and PostgreSQL"
+  },
+  {
+    icon: <FiCpu className="w-8 h-8" />,
+    title: "AI/ML",
+    description: "Creating intelligent solutions with TensorFlow, PyTorch, and OpenCV"
+  }
 ]
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-xl mx-auto px-4">
-        <Navbar />
-        <motion.main
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <Navbar />
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="pt-16 pb-20"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-20"
         >
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl font-bold text-gray-800 mb-6"
-          >
-            Hello, I'm Ian Hoang
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-xl text-gray-600 mb-8"
-          >
-            I am a sophomore student at the University of Florida currently studying Computer Science and Mathematics. I have experience in building full-stack web applications and mobile applications.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <Link
-              href="/projects"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
-            >
-              View My Projects
-            </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            className="relative w-[450px] h-[300px] mx-auto mb-12 overflow-hidden shadow-2xl rounded-2xl transform hover:scale-[1.02] transition-transform duration-300"
           >
             <Image
-                src="/pfp.jpeg"
-                alt="Ian Hoang"
-                width={300}
-                height={300}
-                className="shadow-md m-8"
-              />
-
+              src="/pfp.png"
+              alt="Ian Hoang"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
           </motion.div>
-          <motion.section
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-6xl font-permanent-marker bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 leading-[1.2]"
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Tech Stack</h2>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-              {techStacks.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 1 + index * 0.05 }}
-                  className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
-                >
-                  <tech.icon className="text-2xl mb-2 text-gray-700" />
-                  <span className="text-xs text-gray-600 text-center">{tech.name}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
-        </motion.main>
-      </div>
+            Ian Hoang
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="text-2xl font-caveat text-gray-700 dark:text-gray-200 mb-8"
+          >
+            I'm Ian, currently a junior at UF studying CS.🐊
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+        >
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="text-blue-600 dark:text-blue-400 mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                {skill.icon}
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
+                {skill.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">
+                {skill.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="space-y-10"
+        >
+          <div className="flex justify-center space-x-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/projects"
+                className="px-10 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300 font-caveat text-2xl shadow-lg hover:shadow-xl"
+              >
+                Projects
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/experience"
+                className="px-10 py-4 rounded-xl bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-200 hover:from-gray-200 hover:via-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:via-gray-600 dark:hover:to-gray-500 transition-all duration-300 font-caveat text-2xl shadow-lg hover:shadow-xl"
+              >
+                Experience
+              </Link>
+            </motion.div>
+          </div>
+
+          <div className="flex justify-center space-x-10 pt-6">
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.1 }}
+              whileHover={{ scale: 1.3, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://github.com/ianhoangdev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              <FiGithub className="w-8 h-8" />
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              whileHover={{ scale: 1.3, rotate: -5 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://linkedin.com/in/ianhoangdev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              <FiLinkedin className="w-8 h-8" />
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.3 }}
+              whileHover={{ scale: 1.3, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              href="mailto:ianhoangdev@gmail.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              <FiMail className="w-8 h-8" />
+            </motion.a>
+          </div>
+        </motion.div>
+      </main>
+      <PageArrow nextPage="/projects" label="View Projects" />
     </div>
   )
 }
